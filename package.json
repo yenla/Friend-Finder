@@ -1,0 +1,25 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yenla/Friend-Finder.git"
+  },
+  "author": "Yen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yenla/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/yenla/Friend-Finder#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  }
+}
