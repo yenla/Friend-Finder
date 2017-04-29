@@ -32,19 +32,19 @@ Follow the steps below to interact with this site locally using the example data
 
 • Below is example code on how to store your own friend data
 
-			{
-				"name": "Morty",
-				"photo": "https://media.giphy.com/media/YTu9T2FIiGlWg/giphy.gif",
-				"scores": [
-					"5",
-					"1",
-					"4",
-					"3",
-					"5",
-					"2",
-					"2",
-					"5",
-					"3",
-					"2"
-				]
-			}
+	{
+		"name": "Morty",
+		"photo": "https://media.giphy.com/media/YTu9T2FIiGlWg/giphy.gif",
+		"scores": [
+			"5",
+			"1",
+			"4",
+			"3",
+			"5",
+			"2",
+			"2",
+			"5",
+			"3",
+			"2"
+		]
+	}
