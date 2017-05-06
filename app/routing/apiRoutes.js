@@ -30,31 +30,35 @@ module.exports = function(app) {
 			surveyData.forEach(function(el){
 				var dbObj = {};
 				dbObj.name = el.name;
+				dbObj.photo = el.photo;
 				var totalDifference = 0;
 				console.log(el.scores);
-				// el.scores.forEach(function(score, idx){
-				// 	var difference = Math.abs(parseInt(score) - parseInt(req.body.questionaires[idx]));
-				// 	totalDifference += difference;
-				// });
+				el.scores.forEach(function(score, idx){
+					var difference = Math.abs(parseInt(score) - parseInt(req.body.questionaires[idx]));
+					totalDifference += difference;
+				});
 
-				// var minimumDifference = dbObj.totalDifference;
-				// minimumDifference = 40;
-				// console.log(totalDifference);
+				dbObj.totalDifference = totalDifference;
+				db.push(dbObj);
 
-				// if(totalDifference < minimumDifference) {
-				// 	minimumDifference = totalDifference;
-				// 	db.push(dbObj);
-				// }
-			});
-
-			res.json(surveyData[bestFriendIndex]);
+			}); // this closes forEach
 
 			cb(db, body);
 		}
 
 		surveyPeople(req, function(db, reqBody){
+			console.log('this is the processed db');
 			console.log(db);
+
+			var sortedDb = db.sort(function(a,b){
+				return a.totalDifference - b.totalDifference;
+			});
+
+			console.log(sortedDb[0]);
+
 			surveyData.push(reqBody);
+
+			res.json(sortedDb[0]);
 			// Sort through the total different to grab the lowest scores.
 
 		})
